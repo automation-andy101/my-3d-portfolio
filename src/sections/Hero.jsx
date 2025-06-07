@@ -2,8 +2,6 @@ import Button from '../components/Button';
 import HeroExperience from '../components/HeroModels/HeroExperience';
 import { words } from '../constants/index';
 
-
-
 const Hero = () => {
   return (
     <section id="hero" className="relative overflow-hidden">
@@ -41,18 +39,19 @@ const Hero = () => {
                     <p className='text-white-50 md:text-xl relative z-10 pointer-events-none'>
                         Hi, I am Andrew, a developer based in the UK with a passion for coding.
                     </p>
+                    
                     <Button
+                        text="See My Work"
                         className="md:w-80 md:h-16 w-60 h-12"
-                        id="button"
-                        text="See my Work"
+                        id="counter"
                     />
                 </div>
             </header>
 
             {/* RIGHT: 3D MODEL */}
             <figure>
-                <div className='hero-3d-layout border-red-200 border-2'>
-                                    <HeroExperience />
+                <div className='hero-3d-layout'>
+                    <HeroExperience />
                 </div>                                
             </figure>
         </div>
