@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
 
-const GlowCard = ({ card, children, index }) => {
+const GlowCard = ({ review, children, index }) => {
     const cardRefs = useRef([]);
 
     const handleMouseMove = (index) => (e) => {
@@ -21,7 +21,7 @@ const GlowCard = ({ card, children, index }) => {
     }
 
     return (
-        <div ref={(el) => (cardRefs.current[index] = el)} onMouseMove={handleMouseMove(index)} className="card card-border timeline-card rounded-xl p-10">
+        <div ref={(el) => (cardRefs.current[index] = el)} onMouseMove={handleMouseMove(index)} className="card card-border timeline-card rounded-xl p-10 mb-5 break-inside-avoid-column">
             <div className="glow" />
             <div className="flex items-center gap-1 mb-5">
                 {Array.from({length: 5}, (_, i) => (
@@ -29,7 +29,7 @@ const GlowCard = ({ card, children, index }) => {
                 ))}
             </div>
             <div className="mb-5">
-                <p className="text-white-50 text-lg">{card.review}</p>
+                <p className="text-white-50 text-lg">{review}</p>
             </div>
             {children}
         </div>
